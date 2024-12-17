@@ -1,4 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-//jola
-
+﻿static void Examen()
+{
+    int cantidadDeNumeros = 10;
+    int[] numeros = new int[cantidadDeNumeros];
+    Console.WriteLine($"Introduce {cantidadDeNumeros} una cantidad de numeros enteros");
+}
