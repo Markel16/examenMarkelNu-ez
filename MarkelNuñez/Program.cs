@@ -1,37 +1,48 @@
-﻿static void Examen()
+﻿using System;
+
+class Program
 {
-    int cantidadDeNumeros = 10;
-    int[] numeros = new int[cantidadDeNumeros];
-    Console.WriteLine($"Introduce {cantidadDeNumeros} una cantidad de numeros enteros");
-
-    for (int i = 0; i < cantidadDeNumeros; i++)
+    static void Examen()
     {
-        Console.WriteLine($"Coloca un numero {i + 1}:");
+        int cantidadDeNumeros = 10;
+        int[] numeros = new int[cantidadDeNumeros];
+        Console.WriteLine($"Introduce {cantidadDeNumeros} una cantidad de numeros enteros");
 
-        while (!int.TryParse(Console.ReadLine(), out numeros[i]))
+        // Entrada de números
+        for (int i = 0; i < cantidadDeNumeros; i++)
         {
-            Console.Write("Solo valen numeros, prueba de nuevo:");
+            Console.Write($"Coloca un numero: ");
+            while (!int.TryParse(Console.ReadLine(), out numeros[i]))
+            {
+                Console.Write("Solo valen numeros, prueba de nuevo: ");
+            }
         }
-    }
-    Console.WriteLine("\n  esta es tu lista de numeros que has puesto: ");
-    for (int i = 0; i < cantidadDeNumeros; i++)
-    {
-        if (i == cantidadDeNumeros - 1)
+
+        // Mostrar lista de números separados por espacios
+        Console.WriteLine("\nEsta es tu lista de numeros que has puesto:");
+        for (int i = 0; i < cantidadDeNumeros; i++)
         {
-            Console.Write(numeros[i]);
-
+            if (i == cantidadDeNumeros - 1)
+                Console.Write(numeros[i]); // Último número sin espacio
+            else
+                Console.Write(numeros[i] + " ");
         }
-        else
-            Console.Write(numeros[i] + " ");
-    }
-    Console.WriteLine();
+        Console.WriteLine();
 
-    bool numero = true;
-    foreach (int i in numeros)
-    {
-        if (!numero) Console.WriteLine(",");
-        Console.Write(numero);
-        numero = false;
+        // Mostrar lista de números separados por comas
+        Console.WriteLine("\nEsta es tumlista de numeros separados por comas:");
+        bool esPrimero = true;
+        foreach (int i in numeros)
+        {
+            if (!esPrimero) Console.Write(", ");
+            Console.Write(i);
+            esPrimero = false;
+        }
+        Console.WriteLine();
     }
-    Console.WriteLine();
+
+    static void Main(string[] args)
+    {
+        Examen();
+    }
 }
