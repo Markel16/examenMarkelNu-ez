@@ -41,7 +41,7 @@ class Program
         Console.WriteLine();
     }
 
-    static void Main(string[] args)
+    static void Main(string[] args) //el punto de e trada del programa
     {
         Examen();
     }
