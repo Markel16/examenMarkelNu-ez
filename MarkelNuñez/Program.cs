@@ -25,4 +25,13 @@
             Console.Write(numeros[i] + " ");
     }
     Console.WriteLine();
+
+    bool numero = true;
+    foreach (int i in numeros)
+    {
+        if (!numero) Console.WriteLine(",");
+        Console.Write(numero);
+        numero = false;
+    }
+    Console.WriteLine();
 }
