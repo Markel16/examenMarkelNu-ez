@@ -19,7 +19,7 @@ class Program
         }
 
         // Mostrar lista de números separados por espacios
-        Console.WriteLine("\nEsta es tu lista de numeros que has puesto:");
+        Console.WriteLine("\nEsta es tu lista de numeros que has puesto:"); // aqui lohe cambiado. no me ha dado tiepo a ahcer un push en condiciones
         for (int i = 0; i < cantidadDeNumeros; i++)
         {
             if (i == cantidadDeNumeros - 1)
